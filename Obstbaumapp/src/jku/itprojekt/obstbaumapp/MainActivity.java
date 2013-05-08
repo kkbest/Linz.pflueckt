@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.webkit.GeolocationPermissions;
 
 public class MainActivity extends Activity {
 
@@ -86,10 +85,11 @@ public class MainActivity extends Activity {
 				pbProgress.setVisibility(View.VISIBLE);
 				super.onPageStarted(view, url, favicon);
 			}
-			
-			/* public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
-				    callback.invoke(origin, true, false);
-			 }
+
+			/*
+			 * public void onGeolocationPermissionsShowPrompt(String origin,
+			 * GeolocationPermissions.Callback callback) {
+			 * callback.invoke(origin, true, false); }
 			 */
 			@Override
 			public void onReceivedError(WebView view, int errorCode,
@@ -128,6 +128,15 @@ public class MainActivity extends Activity {
 	public void startBrowser() {
 		setSettings();
 		reloadPage();
+	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		if(mWebView.canGoBack())
+			mWebView.goBack();
+		else
+			finish();
 	}
 
 }
