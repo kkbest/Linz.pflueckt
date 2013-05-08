@@ -9,12 +9,14 @@ import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.webkit.GeolocationPermissions;
 
 public class MainActivity extends Activity {
 
@@ -67,11 +69,19 @@ public class MainActivity extends Activity {
 		mWebView = (WebView) findViewById(R.id.webView1);
 		// allow Javascript and Geolocation
 		mWebView.getSettings().setJavaScriptEnabled(true);
-		mWebView.getSettings().setGeolocationEnabled(true);
+		//mWebView.getSettings().setGeolocationEnabled(true);
 		mWebView.getSettings().setAppCacheEnabled(true);
 		mWebView.getSettings().setDatabaseEnabled(true);
 		mWebView.getSettings().setDomStorageEnabled(true);
+		mWebView.setWebChromeClient(new WebChromeClient() {
 
+			   @Override
+			   public void onGeolocationPermissionsShowPrompt(String origin,
+					   GeolocationPermissions.Callback callback) {
+			    callback.invoke(origin, true, false);
+			   }
+
+			  });
 		mWebView.setWebViewClient(new WebViewClient() {
 
 			@Override
@@ -85,12 +95,7 @@ public class MainActivity extends Activity {
 				pbProgress.setVisibility(View.VISIBLE);
 				super.onPageStarted(view, url, favicon);
 			}
-
-			/*
-			 * public void onGeolocationPermissionsShowPrompt(String origin,
-			 * GeolocationPermissions.Callback callback) {
-			 * callback.invoke(origin, true, false); }
-			 */
+			 
 			@Override
 			public void onReceivedError(WebView view, int errorCode,
 					String description, String failingUrl) {
