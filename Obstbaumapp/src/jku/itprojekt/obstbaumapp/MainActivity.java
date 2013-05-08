@@ -28,9 +28,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		pbProgress = (ProgressBar)findViewById(R.id.pbProgress1);
-		
+
+		pbProgress = (ProgressBar) findViewById(R.id.pbProgress1);
+
 		startBrowser();
 	}
 
@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
-		//url = "http://linz.pflueckt.at/";
+		// url = "http://linz.pflueckt.at/";
 		return true;
 	}
 
@@ -53,8 +53,8 @@ public class MainActivity extends Activity {
 		}
 
 	}
-	
-	public void reloadPage(){
+
+	public void reloadPage() {
 		mWebView.loadUrl("http://obst.linzwiki.at/");
 	}
 
@@ -87,11 +87,17 @@ public class MainActivity extends Activity {
 			public void onReceivedError(WebView view, int errorCode,
 					String description, String failingUrl) {
 
-				Toast.makeText(MainActivity.this, description, Toast.LENGTH_SHORT);
+				Toast.makeText(MainActivity.this, description,
+						Toast.LENGTH_SHORT);
 				// view.loadData("Keine Verbindung vorhanden",
 				// "text/html","utf-8");
-				mWebView.loadData("Keine Verbindung vorhanden", "text/html",
-						"utf-8");
+				mWebView.loadData(
+						"<p><h1>Keine Internetverbindung</h1></p>"
+								+ "<p><h3>Derzeit kann nicht auf die Applikation zugegriffen werden.</h3></p>"
+								+ "<p><h4>Hier einige Tipps:</h4></p>"
+								+ "<p><li>Stellen Sie sicher, dass sie mit dem Wlan verbunden sind.</li></p>"
+								+ "<p><li>Versuchen Sie es sp&auml;ter erneut.</li></p>",
+						"text/html", "utf-8");
 
 				btnerror.setVisibility(View.VISIBLE);
 				btnerror.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +113,7 @@ public class MainActivity extends Activity {
 
 		});
 	}
-	
+
 	/**
 	 * starting the Browser //main input
 	 */
