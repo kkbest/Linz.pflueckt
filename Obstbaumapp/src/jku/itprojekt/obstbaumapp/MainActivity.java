@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 
 		btnerror = (Button) findViewById(R.id.button1);
 		btnerror.setVisibility(View.GONE);
-		btnerror.setText("Reload");
+		btnerror.setText("Neu laden");
 
 		mWebView = (WebView) findViewById(R.id.webView1);
 		// allow Javascript and Geolocation
