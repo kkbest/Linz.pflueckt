@@ -92,7 +92,7 @@ public class MainActivity extends Activity {
 				// view.loadData("Keine Verbindung vorhanden",
 				// "text/html","utf-8");
 				mWebView.loadData(
-						"<p><h1>Keine Internetverbindung</h1></p>"
+						"<p><h2>Keine Internetverbindung</h2></p>"
 								+ "<p><h3>Derzeit kann nicht auf die Applikation zugegriffen werden.</h3></p>"
 								+ "<p><h4>Hier einige Tipps:</h4></p>"
 								+ "<p><li>Stellen Sie sicher, dass sie mit dem Wlan verbunden sind.</li></p>"
