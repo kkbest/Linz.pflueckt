@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -142,6 +143,11 @@ public class MainActivity extends Activity {
 			mWebView.goBack();
 		else
 			finish();
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig){        
+	    super.onConfigurationChanged(newConfig);
 	}
 
 }
