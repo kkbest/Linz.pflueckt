@@ -151,7 +151,7 @@ public class MainActivity extends Activity {
 						"<p><h2>Keine Internetverbindung</h2></p>"
 								+ "<p><h3>Derzeit kann nicht auf die Applikation zugegriffen werden.</h3></p>"
 								+ "<p><h4>Hier einige Tipps:</h4></p>"
-								+ "<p><li>Stellen Sie sicher, dass sie mit dem Wlan verbunden sind.</li></p>"
+								+ "<p><li>Stellen Sie sicher, dass Sie mit dem Internet verbunden sind.</li></p>"
 								+ "<p><li>Versuchen Sie es sp&auml;ter erneut.</li></p>",
 						"text/html", "utf-8");
 
