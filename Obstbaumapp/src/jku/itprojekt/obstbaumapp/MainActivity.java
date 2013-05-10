@@ -143,8 +143,8 @@ public class MainActivity extends Activity {
 			public void onReceivedError(WebView view, int errorCode,
 					String description, String failingUrl) {
 
-				Toast.makeText(MainActivity.this, description,
-						Toast.LENGTH_SHORT);
+				//Toast.makeText(MainActivity.this, description,
+				//		Toast.LENGTH_SHORT).show();
 				// view.loadData("Keine Verbindung vorhanden",
 				// "text/html","utf-8");
 				mWebView.loadData(
