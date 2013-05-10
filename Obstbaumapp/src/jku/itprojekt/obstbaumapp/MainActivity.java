@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void reloadPage() {
-		mWebView.loadUrl("http://obst.linzwiki.at/");
+		mWebView.loadUrl("http://linz.pflueckt.at/");
 	}
 
 	public void setSettings() {
