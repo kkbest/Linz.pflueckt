@@ -54,9 +54,11 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.it_neuLaden:
+		case R.id.it_reloadPage:
 			reloadPage();
 			return true;
+		case R.id.it_closeApp:
+			finish();
 		default:
 			return super.onOptionsItemSelected(item);
 		}

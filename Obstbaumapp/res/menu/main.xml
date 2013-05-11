@@ -1,4 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/it_neuLaden" android:title="Neu Laden"></item>
+    <item android:id="@+id/it_reloadPage" android:title="Neu Laden"></item>
+    <item android:id="@+id/it_closeApp" android:title="Beenden"></item>
 
 </menu>
