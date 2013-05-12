@@ -27,6 +27,7 @@ import android.webkit.GeolocationPermissions;
 public class MainActivity extends Activity {
 
 	WebView mWebView; // Webview which handles the main app
+	WebClient mc;
 	TextView txterror;
 	Button btnerror;
 	String url;
@@ -80,8 +81,7 @@ public class MainActivity extends Activity {
 		mWebView = (WebView) findViewById(R.id.webView1);
 		
 		//multitouch
-		WebClient mc = new WebClient(mWebView);
-		mc.setPolyfillAllTouches(true);
+		mc = new WebClient(mWebView);
 		
 		// allow Javascript and Geolocation
 		mWebView.getSettings().setJavaScriptEnabled(true);
