@@ -80,9 +80,6 @@ public class MainActivity extends Activity {
 
 		mWebView = (WebView) findViewById(R.id.webView1);
 		
-		//multitouch
-		mc = new WebClient(mWebView);
-		
 		// allow Javascript and Geolocation
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		// mWebView.getSettings().setGeolocationEnabled(true);
@@ -178,6 +175,9 @@ public class MainActivity extends Activity {
 			}
 
 		});
+		
+		//multitouch
+				mc = new WebClient(mWebView);
 	}
 
 	/**
