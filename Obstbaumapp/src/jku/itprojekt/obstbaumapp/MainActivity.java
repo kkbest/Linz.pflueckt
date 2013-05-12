@@ -82,7 +82,6 @@ public class MainActivity extends Activity {
 		mWebView.getSettings().setAppCacheEnabled(true);
 		mWebView.getSettings().setDatabaseEnabled(true);
 		mWebView.getSettings().setDomStorageEnabled(true);
-		mWebView.getSettings().setBuiltInZoomControls(true);
 		mWebView.getSettings().setSupportZoom(true);
 		mWebView.setWebChromeClient(new WebChromeClient() {
 
