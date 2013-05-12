@@ -1,5 +1,7 @@
 package jku.itprojekt.obstbaumapp;
 
+import com.changeit.wmpolyfill.WebClient;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
@@ -70,19 +72,24 @@ public class MainActivity extends Activity {
 	}
 
 	public void setSettings() {
-
+		
 		btnerror = (Button) findViewById(R.id.button1);
 		btnerror.setVisibility(View.GONE);
 		btnerror.setText("Neu laden");
 
 		mWebView = (WebView) findViewById(R.id.webView1);
+		
+		//multitouch
+		WebClient mc = new WebClient(mWebView);
+		mc.setPolyfillAllTouches(true);
+		
 		// allow Javascript and Geolocation
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		// mWebView.getSettings().setGeolocationEnabled(true);
 		mWebView.getSettings().setAppCacheEnabled(true);
 		mWebView.getSettings().setDatabaseEnabled(true);
 		mWebView.getSettings().setDomStorageEnabled(true);
-		mWebView.getSettings().setSupportZoom(true);
+		
 		mWebView.setWebChromeClient(new WebChromeClient() {
 
 			@Override
