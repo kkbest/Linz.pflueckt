@@ -1,7 +1,5 @@
 package jku.itprojekt.obstbaumapp;
 
-import com.changeit.wmpolyfill.WebClient;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
@@ -27,7 +25,6 @@ import android.webkit.GeolocationPermissions;
 public class MainActivity extends Activity {
 
 	WebView mWebView; // Webview which handles the main app
-	WebClient mc;
 	TextView txterror;
 	Button btnerror;
 	String url;
@@ -69,6 +66,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void reloadPage() {
+		btnerror.setVisibility(View.GONE);
 		mWebView.loadUrl("http://linz.pflueckt.at/");
 	}
 
@@ -166,7 +164,6 @@ public class MainActivity extends Activity {
 				btnerror.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
 						reloadPage();
-						btnerror.setVisibility(View.GONE);
 						// showToast(MainActivity.this, "click",
 						// Toast.LENGTH_SHORT);
 						// ((WebView) v).loadUrl("http://obst.linzwiki.at/");
@@ -175,9 +172,6 @@ public class MainActivity extends Activity {
 			}
 
 		});
-		
-		//multitouch
-				mc = new WebClient(mWebView);
 	}
 
 	/**
